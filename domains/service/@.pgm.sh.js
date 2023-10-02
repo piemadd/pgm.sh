@@ -6,9 +6,7 @@ addSubDomain({
     repo: 'https://github.com/piemadd/pgm.sh',
   },
   record: {
-    A: [
-      '192.64.119.103',
-    ],
+    CNAME: 'pgm-sh.pages.dev',
   },
   proxy: true,
 })
