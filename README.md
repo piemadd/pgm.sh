@@ -134,8 +134,8 @@ A correct PR example can be found [here](https://github.com/piemadd/pgm.sh/pull/
 
 > 🔍 A few similar services can be [found here](https://free-for.dev/#/?id=domain).  
 
-[badge-tests]:https://img.shields.io/github/actions/workflow/status/piemadd/pgm.sh/tests.yml?branch=master&label=tests&logo=github&style=for-the-badge
-[badge-deploy]:https://img.shields.io/github/actions/workflow/status/piemadd/pgm.sh/deploy.yml?branch=master&label=deploy&logo=github&style=for-the-badge
+[badge-tests]:https://img.shields.io/github/actions/workflow/status/piemadd/pgm.sh/tests.yml?branch=main&label=tests&logo=github&style=for-the-badge
+[badge-deploy]:https://img.shields.io/github/actions/workflow/status/piemadd/pgm.sh/deploy.yml?branch=main&label=deploy&logo=github&style=for-the-badge
 [badge-domains]:https://img.shields.io/github/directory-file-count/piemadd/pgm.sh/domains?label=domains&style=for-the-badge&type=file
 
 [actions]:https://github.com/piemadd/pgm.sh/actions
