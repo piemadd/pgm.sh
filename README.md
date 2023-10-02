@@ -1,7 +1,7 @@
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://socialify.git.ci/tarampampam/free-domains/image?description=1&font=Raleway&forks=1&issues=1&owner=0&pulls=1&pattern=Solid&stargazers=1&theme=Dark">
-    <img src="https://socialify.git.ci/tarampampam/free-domains/image?description=1&font=Raleway&forks=1&issues=1&owner=0&pulls=1&pattern=Solid&stargazers=1&theme=Light">
+    <source media="(prefers-color-scheme: dark)" srcset="https://socialify.git.ci/piemadd/pgm.sh/image?description=1&font=Raleway&forks=1&issues=1&owner=0&pulls=1&pattern=Solid&stargazers=1&theme=Dark">
+    <img src="https://socialify.git.ci/piemadd/pgm.sh/image?description=1&font=Raleway&forks=1&issues=1&owner=0&pulls=1&pattern=Solid&stargazers=1&theme=Light">
   </picture>
   <br/>
   <br/>
@@ -11,16 +11,15 @@
 ![badge-domains]
 </div>
 
-> **Due to numerous nonsensical domain requests since the creation of this repository, I have temporarily restricted interactions to previously contributed developers.**
+> This project is a fork of [tarampampam/free-domains](https://github.com/tarampampam/free-domains), which I highly encourage you to check out
 
 Free subdomains for personal sites, open-source projects, and more. Here is a list of supported domain names:
 
 |              Domain name              |                         Features                          |
 |:-------------------------------------:|:---------------------------------------------------------:|
-| ⚡ [`*.is-an.app`](https://is-an.app/) | ![cf][badge-cf] ![dnssec][badge-dnssec] ![ssl][badge-ssl] |
-|             ⚡ `*.1bt.uk`              |          ![cf][badge-cf] ![dnssec][badge-dnssec]          |
+| ⚡ [`*.pgm.sh`](https://pgm.sh/) | ![cf][badge-cf] ![dnssec][badge-dnssec] |
 
-> Wildcards (like `*.foo.is-an.app`) are supported too, but the reason for their registration should be very
+> Wildcards (like `*.foo.pgm.sh`) are supported too, but the reason for their registration should be very
 > clear and described in detail. Open an issue before the wildcard subdomain request with a clear description.
 
 [badge-cf]:https://shields.io/badge/%20-cloudflare-blue?logo=cloudflare&style=plastic?cacheSeconds=3600
@@ -38,25 +37,25 @@ and use subdomains. And why not share them with the community?
 
 ## Domains settings
 
-|                                   Option                                   |       `*.is-an.app`       |        `*.1bt.uk`         |
-|:--------------------------------------------------------------------------:|:-------------------------:|:-------------------------:|
-|                              [DNSSEC][dnssec]                              |             ✅             |             ✅             |
-|                                   Email                                    |             ❌             |             ❌             |
-|                                 SSL/TLS *                                  |     [Full][ssl-full]      |   [Flexible][ssl-flex]    |
-|                             Always Use HTTPS *                             |             ✅             |             ❌             |
-|                   HTTP Strict Transport Security (HSTS)                    |             ✅             |             ❌             |
-|                           Minimum TLS Version *                            |          TLS 1.2          |          TLS 1.2          |
-|                    Opportunistic Encryption, TLS 1.3 *                     |             ✅             |             ✅             |
-|                      WAF (Web Application Firewall) *                      | ✅ (Medium Security Level) | ✅ (Medium Security Level) |
-|                         Browser Integrity Check *                          |             ✅             |             ✅             |
-|            [Caching Level][caching-levels], Browser Cache TTL *            |     Standard, 4 hours     |     Standard, 4 hours     |
-|                      [Crawler Hints][crawler-hints] *                      |             ✅             |             ✅             |
-| [HTTP/2][http2], [HTTP/2 to Origin][http2-to-origin], HTTP/3 (with QUIC) * |             ✅             |             ✅             |
-|                   [0-RTT Connection Resumption][0rtt] *                    |             ✅             |             ✅             |
-|                         [gRPC][grpc], WebSockets *                         |             ✅             |             ✅             |
-|                        [Pseudo IPv4][pseudo-ipv4] *                        |        Add header         |        Add header         |
-|               IP Geolocation (HTTP header `CF-IPCountry`) *                |             ✅             |             ✅             |
-|                           Maximum Upload Size *                            |          100 MB           |          100 MB           |
+|                                   Option                                   |       `*.pgm.sh`       |
+|:--------------------------------------------------------------------------:|:-------------------------:|
+|                              [DNSSEC][dnssec]                              |             ✅             |
+|                                   Email                                    |             ❌             |
+|                                 SSL/TLS *                                  |     [Full][ssl-full]      |
+|                             Always Use HTTPS *                             |             ✅             |
+|                   HTTP Strict Transport Security (HSTS)                    |             ✅             |
+|                           Minimum TLS Version *                            |          TLS 1.2          |
+|                    Opportunistic Encryption, TLS 1.3 *                     |             ✅             |
+|                      WAF (Web Application Firewall) *                      | ✅ (Medium Security Level) |
+|                         Browser Integrity Check *                          |             ✅             |
+|            [Caching Level][caching-levels], Browser Cache TTL *            |     Standard, 4 hours     |
+|                      [Crawler Hints][crawler-hints] *                      |             ✅             |
+| [HTTP/2][http2], [HTTP/2 to Origin][http2-to-origin], HTTP/3 (with QUIC) * |             ✅             |
+|                   [0-RTT Connection Resumption][0rtt] *                    |             ✅             |
+|                         [gRPC][grpc], WebSockets *                         |             ✅             |
+|                        [Pseudo IPv4][pseudo-ipv4] *                        |        Add header         |
+|               IP Geolocation (HTTP header `CF-IPCountry`) *                |             ✅             |
+|                           Maximum Upload Size *                            |          100 MB           |
 
 > `*` Available only when proxying (`"proxy": true`) is enabled
 
@@ -84,7 +83,7 @@ register `<your-subdomain-name>` subdomain
 
 addSubDomain({
   description: '...', // describe your project in this field
-  domain: '1bt.uk', // aka "root-domain". select between '1bt.uk' and 'is-an.app'
+  domain: 'pgm.sh', // aka "root-domain". currently only 'pgm.sh'
   subdomain: 'foobar', // desired subdomain name
   owner: {
     repo: '<https://URL/to/the/repository/with/your/project/sources/if/it/is/public>',
@@ -126,18 +125,18 @@ takes 5..15 minutes)_
 
 ⚠ To validate the project domain, registered on the **Vercel** platform - please, provide full information about the
 required verification records in the PR description or separate issue. I need to add them to the DNS zone manually.
-A correct PR example can be found [here](https://github.com/tarampampam/free-domains/pull/300).
+A correct PR example can be found [here](https://github.com/piemadd/pgm.sh/pull/300).
 
 ## If you don't know...
 
 - What is GitHub pages and how to set up a custom domain, read the [docs here](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
 - The difference between `A`, `CNAME`, and other record types, the article on Wikipedia [is here](https://en.wikipedia.org/wiki/List_of_DNS_record_types)
 
-> 🔍 A few similar services can be [found here](https://free-for.dev/#/?id=domain).
+> 🔍 A few similar services can be [found here](https://free-for.dev/#/?id=domain).  
 
-[badge-tests]:https://img.shields.io/github/actions/workflow/status/tarampampam/free-domains/tests.yml?branch=master&label=tests&logo=github&style=for-the-badge
-[badge-deploy]:https://img.shields.io/github/actions/workflow/status/tarampampam/free-domains/deploy.yml?branch=master&label=deploy&logo=github&style=for-the-badge
-[badge-domains]:https://img.shields.io/github/directory-file-count/tarampampam/free-domains/domains?label=domains&style=for-the-badge&type=file
+[badge-tests]:https://img.shields.io/github/actions/workflow/status/piemadd/pgm.sh/tests.yml?branch=master&label=tests&logo=github&style=for-the-badge
+[badge-deploy]:https://img.shields.io/github/actions/workflow/status/piemadd/pgm.sh/deploy.yml?branch=master&label=deploy&logo=github&style=for-the-badge
+[badge-domains]:https://img.shields.io/github/directory-file-count/piemadd/pgm.sh/domains?label=domains&style=for-the-badge&type=file
 
-[actions]:https://github.com/tarampampam/free-domains/actions
-[deploy]:https://github.com/tarampampam/free-domains/actions/workflows/deploy.yml
+[actions]:https://github.com/piemadd/pgm.sh/actions
+[deploy]:https://github.com/piemadd/pgm.sh/actions/workflows/deploy.yml

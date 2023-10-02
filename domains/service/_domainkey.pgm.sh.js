@@ -1,9 +1,9 @@
 addSubDomain({
   description: 'DKIM record',
-  domain: 'is-an.app',
+  domain: 'pgm.sh',
   subdomain: '*._domainkey',
   owner: {
-    repo: 'https://github.com/tarampampam/free-domains',
+    repo: 'https://github.com/piemadd/pgm.sh',
   },
   record: {
     TXT: [

@@ -1,9 +1,9 @@
 addSubDomain({
   description: 'DMARC record',
-  domain: 'is-an.app',
+  domain: 'pgm.sh',
   subdomain: '_dmarc',
   owner: {
-    repo: 'https://github.com/tarampampam/free-domains',
+    repo: 'https://github.com/piemadd/pgm.sh',
   },
   record: {
     TXT: [

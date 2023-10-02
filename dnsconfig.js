@@ -7,7 +7,7 @@ var validate = new function () {
    * @returns {boolean}
    */
   this.domain = function (domain) {
-    return typeof domain === 'string' && (domain === '1bt.uk' || domain === 'is-an.app')
+    return typeof domain === 'string' && domain === 'pgm.sh'
   }
 
   /**
