@@ -317,7 +317,6 @@ subDomains.forEach(function (subDomain) {
 
   if (subDomain.record.ALIAS) {
     commit[subDomain.domain].push(ALIAS(subDomain.subdomain, subDomain.record.ALIAS, proxy))
-    console.log(JSON.stringify(subDomain.record, null, 2));
   }
 
   if (subDomain.record.NS) {
@@ -355,7 +354,6 @@ subDomains.forEach(function (subDomain) {
 
       if (nested.record.ALIAS) {
         commit[subDomain.domain].push(ALIAS(nestedSubdomain, nested.record.ALIAS, nestedProxy))
-        console.log(JSON.stringify(nested.record, null, 2));
       }
 
       if (nested.record.NS) {
