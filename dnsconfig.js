@@ -71,6 +71,14 @@ var validate = new function () {
   }
 
   /**
+   * @param {*|string} alias
+   * @returns {boolean}
+   */
+  this.alias = function (alias) {
+    return typeof alias === 'string' && /^[a-zA-Z0-9_./-]{2,}$/.test(alias)
+  }
+
+  /**
    * @param {*|string} ns
    * @returns {boolean}
    */
@@ -184,6 +192,14 @@ function addSubDomain(data) {
       }
     }
 
+    if (typeof data.record.ALIAS === 'string') {
+      if (!validate.alias(data.record.ALIAS)) {
+        throw new Error('Invalid ALIAS record 197: "' + data.record.ALIAS + '"')
+      } else {
+        data.record.ALIAS = data.record.ALIAS.toLowerCase().replace(/\.+$/, '') + '.' // normalize and add trailing dot
+      }
+    }
+
     if (Array.isArray(data.record.NS)) {
       if (
         typeof data.record.A !== 'undefined' ||
@@ -242,6 +258,14 @@ function addSubDomain(data) {
         }
       }
 
+      if (typeof data.nested[i].record.ALIAS === 'string') {
+        if (!validate.alias(data.nested[i].record.ALIAS)) {
+          throw new Error('Invalid ALIAS 263 record: "' + data.nested[i].record.ALIAS + '"')
+        } else {
+          data.nested[i].record.ALIAS = data.nested[i].record.ALIAS.toLowerCase().replace(/\.+$/, '') + '.' // normalize and add trailing dot
+        }
+      }
+
       if (Array.isArray(data.nested[i].record.NS)) {
         if (!data.nested[i].record.NS.every(validate.ns)) {
           throw new Error('NS records must be an array of valid domain names')
@@ -291,6 +315,11 @@ subDomains.forEach(function (subDomain) {
     commit[subDomain.domain].push(CNAME(subDomain.subdomain, subDomain.record.CNAME, proxy))
   }
 
+  if (subDomain.record.ALIAS) {
+    commit[subDomain.domain].push(ALIAS(subDomain.subdomain, subDomain.record.ALIAS, proxy))
+    console.log(JSON.stringify(subDomain.record, null, 2));
+  }
+
   if (subDomain.record.NS) {
     subDomain.record.NS.forEach(function (ns) {
       commit[subDomain.domain].push(NS(subDomain.subdomain, ns))
@@ -322,6 +351,11 @@ subDomains.forEach(function (subDomain) {
 
       if (nested.record.CNAME) {
         commit[subDomain.domain].push(CNAME(nestedSubdomain, nested.record.CNAME, nestedProxy))
+      }
+
+      if (nested.record.ALIAS) {
+        commit[subDomain.domain].push(ALIAS(nestedSubdomain, nested.record.ALIAS, nestedProxy))
+        console.log(JSON.stringify(nested.record, null, 2));
       }
 
       if (nested.record.NS) {
