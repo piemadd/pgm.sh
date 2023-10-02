@@ -25,5 +25,5 @@ jobs:
 
       - run: dnscontrol push
         env:
-          CF_ID: ${{ secrets.CF_ACCOUNT_ID }}
-          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ID: ${{ secrets.CF_ID }}
+          CF_TOKEN: ${{ secrets.CF_TOKEN }}
