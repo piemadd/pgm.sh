@@ -6,7 +6,7 @@ addSubDomain({
     repo: 'https://github.com/piemadd/all-the-boats',
   },
   record: {
-    A: '45.63.8.53',
+    A: ['45.63.8.53'],
   },
   proxy: true,
 })
